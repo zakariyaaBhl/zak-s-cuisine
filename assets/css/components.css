@@ -1,0 +1,537 @@
+/*----------------------------------- ----------------------------------- -----------------------------------*\
+  ## navigation menu
+\*----------------------------------- ----------------------------------- -----------------------------------*/
+.nav {
+    padding: 2rem 0;
+}
+
+.nav__icon,
+.nav__close,
+.nav__bgOverlay {
+    display: none;
+}
+
+.nav__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__list__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav__list .nav__link {
+    font-family: var(--ff-poppins);
+    font-size: 1.8rem;
+    color: var(--black-2);
+    padding: 0.5rem;
+}
+
+.nav__list li:is(:hover, :focus-visible) .nav__link {
+    color: var(--green-1);
+}
+
+
+/* ------------------------ Media Queries For Screens that are less than 768px Styles ------------------------*/
+
+@media only screen and (max-width: 768px) {
+    .nav {
+        position: relative;
+    }
+
+    .nav__icon {
+        display: block;
+    }
+
+    :is(.nav__icon, .nav__close) svg {
+        pointer-events: none;
+        width: 30px;
+        height: 30px;
+    }
+
+    .nav__close {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        color: var(--black-1);
+        cursor: pointer;
+    }
+
+    .nav__list {
+        z-index: 1000;
+        position: absolute;
+        left: 100%;
+        top: 0;
+        height: 100vh;
+        width: 80%;
+        background-color: var(--lightGreen-1);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 2rem;
+        transform: translateX(0%);
+        overflow: hidden;
+
+        transition: transform .3s ease-in;
+    }
+
+    .nav__list.show {
+        transform: translateX(-100%);
+    }
+
+    .nav__list__wrapper {
+        flex-direction: column;
+        align-items: flex-end;
+        margin-block-end: 2rem;
+    }
+
+    .nav__list a {
+        font-size: 1.6rem;
+    }
+
+    .nav__bgOverlay {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 1000;
+        background-color: rgba(18, 24, 14, 0.808);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: .5s ease-in;
+    }
+
+    .nav__bgOverlay.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+    }
+}
+
+/* ------------------------ Global Button Styles ------------------------*/
+
+.btn {
+    color: var(--green-1);
+    font-family: var(--ff-poppins);
+    font-size: 1.4rem;
+    font-weight: 500;
+    border-radius: 8px;
+    padding: 1.2rem 2rem;
+}
+
+.btn-primary {
+    color: var(--white-1);
+    background-color: var(--green-1);
+}
+
+@media only screen and (max-width: 768px) {
+    .btn {
+        padding: 1.3rem 2rem;
+        font-size: 1.5rem;
+    }
+}
+
+
+
+
+/*----------------------------------- ----------------------------------- -----------------------------------*\
+  ## FOOTER STYLES
+\*----------------------------------- ----------------------------------- -----------------------------------*/
+
+footer {
+    background-color: var(--lightGreen-1);
+    padding-block: 5rem 2rem;
+}
+
+.footer__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.footer__logo {
+    width: 150px;
+    margin-block-end: 2rem;
+}
+
+.footer__desc {
+    font-size: 1.4rem;
+    color: var(--black-2);
+    margin-block-end: 2rem;
+}
+
+.footer__text__title,
+.footer__socials__title {
+    font-size: 1.8rem;
+    color: var(--black-1);
+    margin-block-end: 1rem;
+    font-weight: 600;
+}
+
+.footer__socials ul {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer__socials a {
+    padding: 0.5rem 0.8rem;
+    background-color: var(--white-1);
+    border: 1px solid var(--green-2);
+    border-radius: 8px;
+}
+
+.footer__socials svg {
+    color: var(--black-2);
+    width: 20px;
+}
+
+.footer__text a {
+    font-size: 1.4rem;
+    margin-block-end: .5rem;
+    color: var(--black-2);
+    font-family: var(--ff-Raleway);
+    font-weight: 500;
+    line-height: 1.4em;
+}
+
+
+
+/* ------------------------ Media Queries For Screens that are large than 768px Styles ------------------------*/
+
+@media only screen and (min-width: 768px) {
+
+    footer {
+        padding-block: 8rem 4rem;
+    }
+
+    .footer__wrapper {
+        flex-direction: row;
+    }
+
+    .footer__col1 {
+        flex: 4;
+    }
+
+    .footer__col2,
+    .footer__col3,
+    .footer__col4 {
+        flex: 2;
+    }
+
+    .footer__desc {
+        max-width: 300px;
+        font-size: 1.4rem;
+        margin-block-end: 2.5rem;
+    }
+
+    .footer__socials__title {
+        font-size: 2rem;
+        margin-block-end: 1.5rem;
+    }
+
+    .footer__text__title {
+        font-size: 2rem;
+        margin-block-end: 2rem;
+    }
+
+    .footer__text a {
+        font-size: 1.4rem;
+        margin-block-end: 1rem;
+    }
+}
+
+
+#copyright {
+    padding: 1rem 0;
+}
+
+.copyright__text {
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+
+/* ------------------------ Media Queries For Screens that are large than 768px Styles ------------------------*/
+
+@media only screen and (min-width: 768px) {
+    .copyright__text {
+        font-size: 1.6rem;
+        text-align: left;
+    }
+}
+
+
+/*----------------------------------- ----------------------------------- -----------------------------------*\
+  ## STORE-INFO-SECTION
+\*----------------------------------- ----------------------------------- -----------------------------------*/
+.storeInfo__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.storeInfo__item {
+    background-color: var(--lightGreen-1);
+    padding: 20px 30px;
+    text-align: center;
+    border-radius: 12px;
+    width: 150px;
+}
+
+.storeInfo__icon {
+    width: 30px;
+    margin-inline: auto;
+    margin-block-end: 1.5rem;
+}
+
+.storeInfo__title {
+    font-family: var(--ff-poppins);
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-block-end: .5rem;
+    color: var(--black-1);
+}
+
+.storeInfo__text {
+    font-family: var(--ff-Raleway);
+    font-size: 1.4rem;
+    color: var(--black-2);
+}
+
+/* ------------------------ Media Queries For Screens that are large than 768px Styles ------------------------*/
+
+@media only screen and (min-width: 768px) {
+    .storeInfo__wrapper {
+        gap: 2rem;
+    }
+
+    .storeInfo__item {
+        min-width: 200px;
+        padding: 40px 0;
+    }
+
+    .storeInfo__icon {
+        margin-block-end: 2.5rem;
+        width: 47px;
+    }
+
+    .storeInfo__title {
+        font-size: 1.8rem;
+        margin-block-end: 1rem;
+    }
+
+    .storeInfo__text {
+        font-size: 1.6rem;
+    }
+}
+
+
+/*----------------------------------- ----------------------------------- -----------------------------------*\
+  ## TOP-DISHES-SECTION
+\*----------------------------------- ----------------------------------- -----------------------------------*/
+.dishGrid__title {
+    font-size: 1.8rem;
+    margin-block-end: 2rem;
+    font-weight: 600;
+    color: var(--black-1);
+}
+
+.dishGrid__wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+}
+
+.dishGrid__item {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--lightGreen-1);
+    padding: .5rem;
+    gap: 0.5rem;
+    border-radius: 12px;
+}
+
+.dishGrid__item__img {
+    flex: 4;
+}
+
+.dishGrid__item__info {
+    flex: 5;
+}
+
+.dishGrid__item__img img {
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.dishGrid__item__title {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.3em;
+    color: var(--black-1);
+    margin-block-end: .5rem;
+}
+
+.dishGrid__item__price {
+    font-size: 1.4rem;
+    color: var(--green-1);
+    font-weight: 600;
+    margin-block-end: .5rem;
+}
+
+.dishGrid__item__stars {
+    max-height: 1.5rem;
+    width: max-content;
+}
+
+/* ------------------------ Media Queries For Screens that are large than 768px Styles ------------------------*/
+
+@media only screen and (min-width: 768px) {
+    .dishGrid__title {
+        font-size: 2.4rem;
+    }
+
+    .dishGrid__wrapper {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 3rem;
+    }
+
+    .dishGrid__item {
+        flex-direction: row;
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+
+    .dishGrid__item__title {
+        font-size: 2.4rem;
+        margin-block-end: 1rem;
+    }
+
+    .dishGrid__item__price {
+        font-size: 2rem;
+        margin-block-end: 1rem;
+    }
+}
+
+
+/* ------------------------ Media Queries For Smaller Screens that are smaller than 300px Styles ------------------------*/
+
+@media only screen and (max-width: 300px) {
+
+    .dishGrid__wrapper {
+        gap: 2rem;
+    }
+
+    .dishGrid__item {
+        width: 80%;
+        margin-inline: auto;
+    }
+
+}
+
+/*----------------------------------- ----------------------------------- -----------------------------------*\
+  ## Form Component
+\*----------------------------------- ----------------------------------- -----------------------------------*/
+
+#form {
+    padding: 5rem 0;
+}
+
+.form__title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--black-1);
+    margin-block-end: 1rem;
+}
+
+.form__wrapper {
+    padding: 3rem 0;
+}
+
+.form__wrapper form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.form__group label {
+    font-family: var(--ff-poppins);
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--black-2);
+}
+
+.form__group input,
+.form__group textarea,
+.form__group select {
+    width: 100%;
+    border: none;
+    background-color: var(--lightGreen-1);
+    font-size: 1.4rem;
+    font-family: var(--ff-Raleway);
+    font-weight: 600;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-block-start: .5rem;
+    color: var(--black-2);
+}
+
+.form__group textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+.form__wrapper button[type=submit] {
+    width: max-content;
+    border: none;
+    padding: 1rem 4rem;
+    font-weight: 500;
+    letter-spacing: .1px;
+}
+
+/* ------------------------ Media Queries For Screens that are large than 768px Styles ------------------------*/
+
+@media only screen and (min-width: 768px) {
+
+    .form__title {
+        font-size: 3.6rem;
+    }
+
+    .form__wrapper {
+        padding: 5rem 0;
+    }
+
+    .form__wrapper form {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .form__group__full {
+        grid-column: span 2;
+    }
+
+    .form__group label {
+        font-size: 1.8rem;
+    }
+
+    .form__group input,
+    .form__group textarea,
+    .form__group select {
+        font-size: 1.8rem;
+        padding: 2rem;
+        margin-block-start: 1.5rem;
+    }
+}
+
+/*----------------------------------- ----------------------------------- -----------------------------------*\
+  ## 
+\*----------------------------------- ----------------------------------- -----------------------------------*/
